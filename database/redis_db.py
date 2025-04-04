@@ -12,7 +12,7 @@ def get_redis_connection():
         port=REDIS_PORT,
         db=REDIS_DB,
         password=REDIS_PASSWORD,
-        decode_responses=True  # Para devolver strings en lugar de bytes
+        decode_responses=True
     )
 
 redis_client = get_redis_connection()
