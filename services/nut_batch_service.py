@@ -3,17 +3,6 @@ from models.drying_data_db import DryingData
 from models.gas_consumation_db import GasConsumptionData
 from models.nut_batch_db import NutBatch
 from database.mongo_db import mongo_client
-from models.oven_db import Oven
-
-class OvenService:
-    def create_oven(self, oven: Oven):
-        mongo_client.ovens.insert_one(oven.__dict__)
-
-    def get_oven(self, oven_id: str) -> Optional[dict]:
-        return mongo_client.ovens.find_one({"oven_id": oven_id})
-
-    def list_ovens(self) -> List[dict]:
-        return list(mongo_client.ovens.find())
 
 class NutBatchService:
     def create_batch(self, batch: NutBatch):
