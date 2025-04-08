@@ -1,6 +1,5 @@
 from typing import List, Optional
 from models.drying_data_db import DryingData
-from models.gas_consumation_db import GasConsumptionData
 from models.nut_batch_db import NutBatch
 from database.mongo_db import mongo_client
 
@@ -18,10 +17,4 @@ class NutBatchService:
         mongo_client.batches.update_one(
             {"batch_id": batch_id},
             {"$push": {"drying_history": data.__dict__}}
-        )
-
-    def add_gas_data(self, batch_id: str, data: GasConsumptionData):
-        mongo_client.batches.update_one(
-            {"batch_id": batch_id},
-            {"$push": {"gas_history": data.__dict__}}
         )
