@@ -22,6 +22,6 @@ class NutBatch:
         self.initial_humidity = initial_humidity
         self.target_humidity = target_humidity
         self.oven_id = oven_id
-        self.drying_history: List[DryingData] = []
+        self.final_drying_values: DryingData | None = None
         self.status = NutStatus.IN_PROGRESS.value
 
