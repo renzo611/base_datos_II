@@ -8,6 +8,11 @@ import json
 # MongoDB - Insertar horno y lote
 # ---------------------
 
+if "ovens" not in mongo_client.list_collection_names():
+    mongo_client.create_collection("ovens")
+if "nut_batches" not in mongo_client.list_collection_names():
+    mongo_client.create_collection("nut_batches")
+
 # Insertar horno
 oven = {
     "_id": ObjectId("67f3f1d0f93c97b2aec11525"),
@@ -32,6 +37,7 @@ nut_batch = {
 }
 mongo_client.nut_batches.insert_one(nut_batch)
 print(f"[MongoDB] Insertado lote: {nut_batch}")
+
 
 # ---------------------
 # Redis - Insertar datos temporales del lote
