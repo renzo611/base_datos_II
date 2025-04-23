@@ -1,2 +1,2 @@
-db = db.getSiblingDB('seminario_iii');
+db = db.getSiblingDB('base_datos_ii');
 db.createCollection('init_collection');
