@@ -81,3 +81,42 @@ El proceso de secado de nueces requiere un control preciso de variables como tem
 - ⚙️ Sensores DHT22, HX711, YF-S401
 
 
+## 🧪 Proceso de Ejecución
+
+Para poner en marcha el entorno y comenzar a trabajar con este proyecto, seguí estos pasos:
+
+### 0. Crea y activa un entorno virtual
+```bash
+python -m venv venv
+source venv/bin/activate    # En Linux/Mac
+venv\Scripts\activate       # En Windows
+```     
+
+### 1. Instala las dependencias necesarias
+```bash
+pip install -r requirements.txt
+```
+O
+```bash
+pip3 install -r requirements.txt
+```
+
+### 2. Crear un archivo `.env` y copiar las variables de entorno del archivo `.env.template`
+
+### 3. Levantar los servicios con Docker Compose
+
+Asegurate de estar ubicado en el mismo directorio donde se encuentra el archivo `docker-compose.yml`. Luego ejecutá el siguiente comando en la terminal:
+
+```bash
+docker-compose up -d
+```
+
+### 4. Ejecutar el script de carga de datos
+
+```bash
+python insert_fields.py
+```
+
+### 5. Ejecutar el análisis desde Jupyter Notebook
+
+Abrí el archivo `dao_nuts.ipynb` usando Jupyter Notebook o algún entorno como VS Code con soporte para notebooks. Ejecutá las celdas para interactuar con los datos y analizar la información procesada.

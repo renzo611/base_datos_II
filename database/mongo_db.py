@@ -12,7 +12,7 @@ MONGO_PORT = os.getenv('MONGO_PORT')
 
 def get_database():
  
-   CONNECTION_STRING = f"mongodb://{MONGO_USER}:{MONGO_PASSWORD}@{MONGO_HOST}:{MONGO_PORT}/{MONGO_SCHEMA}"
+   CONNECTION_STRING = f"mongodb://{MONGO_USER}:{MONGO_PASSWORD}@{MONGO_HOST}:{MONGO_PORT}/"
  
    client = MongoClient(CONNECTION_STRING)
  

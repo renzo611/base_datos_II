@@ -16,10 +16,19 @@ if "nut_batches" not in mongo_client.list_collection_names():
 # Insertar horno
 oven = {
     "_id": ObjectId("67f3f1d0f93c97b2aec11525"),
-    "name": "Horno 2",
+    "name": "Horno de prueba",
     "location": "Chilecito"
 }
+
+oven2 = {
+    "_id": ObjectId("67f3f0fff93c97b2aec11524"),
+    "name": "Horno de eliminacion",
+    "location": "Guanchin"
+}
+
+
 mongo_client.ovens.insert_one(oven)
+mongo_client.ovens.insert_one(oven2)
 print(f"[MongoDB] Insertado horno: {oven}")
 
 # Insertar lote
@@ -58,7 +67,7 @@ real_time_data = [
 
 for i, entry in enumerate(real_time_data, start=1):
     entry["batch_id"] = batch_id
-    redis_client.rpush(redis_key, json.dumps(entry))
+    redis_client.rpush(f"batch_history:{batch_id}", json.dumps(entry))
     print(f"[Redis] Insertado registro #{i} en {redis_key}")
 
 print("\n✅ Todos los datos fueron insertados correctamente en MongoDB y Redis.")
