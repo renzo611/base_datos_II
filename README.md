@@ -37,6 +37,8 @@ El proceso de secado de nueces requiere un control preciso de variables como tem
 - **IoT Gateway (Raspberry Pi 4)**: Centraliza y envía datos a la nube vía 4G LTE o Wi-Fi.
 
 ---
+![ChatGPT Image 24 may 2025, 07_47_09 a m](https://github.com/user-attachments/assets/f9805dba-9b64-465d-807f-a2258cf96d08)
+
 
 ## 🔄 Proceso de Secado
 
