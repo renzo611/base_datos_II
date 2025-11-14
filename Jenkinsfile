@@ -2,18 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/renzo611/base_datos_II.git'
-            }
-        }
-
         stage('Stop previous services') {
             steps {
                 script {
                     sh """
-                        docker-compose down || true
+                        docker compose down || true
                     """
                 }
             }
@@ -23,7 +16,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        docker-compose up -d
+                        docker compose up -d
                     """
                 }
             }
@@ -34,7 +27,7 @@ pipeline {
                 script {
                     sh """
                         sleep 5
-                        docker-compose ps
+                        docker compose ps
                     """
                 }
             }
